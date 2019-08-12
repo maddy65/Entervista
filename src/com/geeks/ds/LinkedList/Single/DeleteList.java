@@ -78,6 +78,23 @@ public class DeleteList {
 		head = current;
 		
 	}
+	public void deleteFirst() {
+		if(head == null) {
+			System.out.println("There is nothing to delete");
+		}
+		head = head.next;
+	}
+	
+	public void deleteEnd() {
+		if(head == null) {
+			System.out.println("There is nothing to delete");
+		}
+		Node last = head;
+		while(last.next.next != null) {
+			last = last.next;
+		}
+		last.next = null;
+	}
 
 	public static void main(String[] args) {
 		DeleteList dLst = new DeleteList();
@@ -88,14 +105,20 @@ public class DeleteList {
 		dLst.insert(5);
 		System.out.println("My List after insretion");
 		dLst.printList();
-		/*System.out.println("My last after changing first and end ");
+		System.out.println("My last after changing first and end ");
 		dLst.swapFirstEnd();
-		dLst.printList();*/
+		dLst.printList();
 		System.out.println("My list after deleting key");
 		dLst.deleteKey(3);
 		dLst.printList();
 		System.out.println("My list after deleting position");
 		dLst.deletePos(3);
+		dLst.printList();
+		System.out.println("My List After delteing First element");
+		dLst.deleteFirst();
+		dLst.printList();
+		System.out.println("My List After delteing end element");
+		dLst.deleteEnd();
 		dLst.printList();
 		System.out.println("My List After delteing all the list");
 		dLst.deleteList();
