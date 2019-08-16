@@ -28,7 +28,7 @@ public class LevelOrderTraversing {
 			int rightHeight = height(root.right);
 			if(leftHeight > rightHeight) {
 				return (leftHeight+1);
-			}else {
+			}else { 
 				return (rightHeight+1);
 			}
 		}
