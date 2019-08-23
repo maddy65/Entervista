@@ -18,7 +18,7 @@ public class BSTPreOrder {
 	
 	Node constructTree(int arr[], int length) {
 		int preIndex = 0;
-		return constructUtil(arr, index, preIndex, Integer.MIN_VALUE, Integer.MAX_VALUE, length);
+		return constructUtil(arr, index, arr[0], Integer.MIN_VALUE, Integer.MAX_VALUE, length);
 	}
 	
 	private Node constructUtil(int[] arr, Index index2, int i, int minValue, int maxValue, int length) {
@@ -32,10 +32,8 @@ public class BSTPreOrder {
 
 			if (index2.index < length) { 
 
-				root.left = constructUtil(arr, index2, 
-							arr[index2.index], minValue, i, length); 
-				root.right = constructUtil(arr, index2, 
-							arr[index2.index], i, maxValue, length); 
+				root.left = constructUtil(arr, index2, arr[index2.index], minValue, i, length); 
+				root.right = constructUtil(arr, index2, arr[index2.index], i, maxValue, length); 
 			} 
 		}
 		return root;
