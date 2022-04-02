@@ -17,13 +17,15 @@ public class Dice {
 				diceArr[j] = sc.nextInt();
 			}
 			int caseValue  = calculateLength(diceArr, n);
-			testArr[i] = caseValue;
+			int caseData = i+1;
+			System.out.println("Case #"+caseData+": "+caseValue);
+			//testArr[i] = caseValue;
 		}
 		
-		for(int k=0;k<t; k++) {
+		/*for(int k=0;k<t; k++) {
 			int caseData = k+1;
 			System.out.println("Case #"+caseData+": "+testArr[k]);
-		}
+		}*/
 		
 
 	}
