@@ -72,13 +72,13 @@ public class DeleteTree {
     }
 	public static void main(String[] args) {
 		DeleteTree tree = new DeleteTree();
-		tree.insert(root,50); 
+		/*tree.insert(root,50); 
         tree.insert(root,30); 
         tree.insert(root,20); 
         tree.insert(root,40); 
         tree.insert(root,70); 
         tree.insert(root,60); 
-        tree.insert(root,80);
+        tree.insert(root,80);*/
 		/*root = new Node(50);
 		root.left = new Node(30);
 		root.left.left = new Node(20);

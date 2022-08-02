@@ -1,9 +1,8 @@
 package com.codejam.q1.problems;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Dice {
+public class SolutionTwo {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,22 +15,15 @@ public class Dice {
 			for(int j=0; j<n; j++) {
 				diceArr[j] = sc.nextInt();
 			}
-			int caseValue  = calculateLength(diceArr, n);
 			int caseData = i+1;
+			int caseValue  = calculateSolution(diceArr, n);
 			System.out.println("Case #"+caseData+": "+caseValue);
 		}
-		
+
 	}
 
-	private static int calculateLength(int[] diceArr, int n) {
-		int count = 0;
-		Arrays.sort(diceArr);
-		for(int i=0; i<n; i++) {
-			if(count < diceArr[i]) {
-				count = count+1;
-			}
-		}
-		return count;
+	private static int calculateSolution(int[] diceArr, int n) {
+		return 0;
 	}
 
 }

@@ -1,7 +1,7 @@
 package com.geeks.ds.LinkedList.Single;
 
 public class FindNKLast {
-	Node head;
+	static Node head;
 	
 	static class Node{
 		int data;
@@ -36,15 +36,61 @@ public class FindNKLast {
 	
 	
 
+	private static int max = 0, count = 0;
+	private static Node top;
 	public static void main(String[] args) {
 		FindNKLast llist = new FindNKLast(); 
-        llist.push(20); 
-        llist.push(4); 
-        llist.push(15); 
-        llist.push(35); 
+        llist.push(3); 
+        llist.push(3); 
+        llist.push(3); 
+        llist.push(3); 
         
-        llist.printNthFromLast(2); 
+        System.out.println(maxPages(head));
+        //llist.printNthFromLast(2); 
 
 	}
+	
+	public static int maxPages(Node head){
+		 /*int count = 0;
+		 
+		 Node temp = head;
+		 int valuefirst = head.data;
+		 while (temp.next.next != null) { 
+            temp = temp.next; 
+        }
+		 int valuelast = temp.next.next.data;
+		 temp.next = null;
+		count = valuefirst + temp.data;
+		head = head.next;
+		if(count > maxPages(head)) {
+			return count;
+		}*/
+		
+		 top = head;
+		    return calculateMax(head);
+		
+		
+		
+		
+	}
+	
+	static int calculateMax(Node tail) {
+		
+	    if(tail.next==null)
+	        max = max<top.data + tail.data ?top.data + tail.data: max;
+	    else if(tail == top && count++ !=0){
+	        max = max<top.data ?tail.data: max;
+	    }
+	    else if(top.next == tail && count++!=1)
+	        max = max<top.data + tail.data ?top.data + tail.data: max;
+
+	    else {
+	    	calculateMax(tail.next);
+	    }
+	    top = top.next;
+	    return max;
+	}
+	
+	
 
 }
